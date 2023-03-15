@@ -1,0 +1,44 @@
+version: "3"
+
+services:
+  # PHP + Apache
+  web:
+    container_name: php-demo-web
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    working_dir: /home/homepage
+    volumes:
+      - '.:/home/homepage'
+    ports:
+      - "7005:80"
+    depends_on:
+      - db
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: php-demo
+      MYSQL_USER: test
+      MYSQL_PASSWORD: testtest
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/db/data:/var/lib/mysql
+      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOSTS=db
+      - PMA_USER=test
+      - PMA_PASSWORD=testtest
+    ports:
+      - "7055:80"
+    volumes:
+      - ./docker/phpmyadmin/sessions:/sessions
+      
+volumes:
+    db_data:
