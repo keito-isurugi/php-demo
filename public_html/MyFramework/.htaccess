@@ -1,0 +1,10 @@
+#.htaccess
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI}/webroot/ !\.css$
+    RewriteCond %{REQUEST_URI}/webroot/ !\.js$
+    RewriteCond %{REQUEST_URI}/webroot/ !\.jpg$
+    RewriteCond %{REQUEST_URI}/webroot/ !\.gif$
+    RewriteCond %{REQUEST_URI}/webroot/ !\.png$
+    RewriteRule ^.*$ ./webroot/index.php
+</IfModule>
