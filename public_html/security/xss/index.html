@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>XSSデモ(被害者サイト)</h1>
+	<!-- <form id="form" action="./thaks.php" method="POST"> -->
+	<form id="form" method="POST">
+		<label for="name">name</label>
+		<input id="name" type="text" name="name">
+		<label for="email">email</label>
+		<input id="email" type="email" name="email">
+		<button type="submit">送信</button>
+	</form>
+
+	<script>
+		function hrefSubmit() {
+			console.log('hoge')
+			alert(0)
+			location.href="http://localhost:7005/security/xss/thaks.php"
+		}
+	</script>
+</body>
+</html>
+
+
+<!-- inputに入力するコード -->
+<!-- <script> window.onload=function(){ location.href="http://localhost:7005/security/xss/atack.php"; }; </script> -->
