@@ -1,0 +1,1 @@
+vendor/bin/phpunit test/$1Test.php
