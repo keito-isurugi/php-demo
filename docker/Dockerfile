@@ -16,7 +16,9 @@ RUN yum update -y && yum install -y httpd zip unzip git epel-release && \
         php-mysqlnd \
         php-zip \
         php-intl \
-        php-redis
+        php-redis \
+        -y sudo
+RUN sudo yum install -y cronie
 
 COPY ./apache/httpd.conf /etc/httpd/conf/httpd.conf
 COPY ./apache/userdir.conf /etc/httpd/conf.d/userdir.conf
