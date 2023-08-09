@@ -1,3 +1,34 @@
+<?php 
+class HogePoint {
+  private $value;
+
+  public function __construct($value) {
+      $this->value = $value;
+  }
+
+  public function getValue() {
+      return $this->value;
+  }
+}
+
+interface Hoge {
+  public function constHogePoint(): HogePoint;
+}
+
+class HogeUser implements Hoge {
+  public function constHogePoint(): HogePoint {
+      $hogeValue = 42; // 例として値を指定
+      return new HogePoint($hogeValue);
+  }
+}
+
+$hogeUser = new HogeUser();
+$hogePoint = $hogeUser->constHogePoint();
+
+echo "Hoge Point Value: " . $hogePoint->getValue() . "\n";
+echo "<br>";
+ ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>

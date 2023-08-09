@@ -4,23 +4,23 @@ require_once('./Interfaces/FruitInterface.php');
 use Interfaces\FruitInterface;
 
 class Grape implements FruitInterface {
-    public function getName(){
+    public function getName(): string{
         return 'ぶどう';
     }
 
-    public function getColor(){
+    public function getColor(): string{
         return 'purple';
     }
 
-    public function getHasLike(){
+    public function getHasLike(): string{
         return '嫌い';
     }
 
-    public function getOrderOfPopularity(){
+    public function getOrderOfPopularity(): int{
         return 2;
     }
 
-    public function getCalorie(){
+    public function getCalorie(): int{
         return 200;
     }
 

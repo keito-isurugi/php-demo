@@ -4,24 +4,24 @@ require_once('./Interfaces/FruitInterface.php');
 use Interfaces\FruitInterface;
 
 class NoneFruit implements FruitInterface {
-    public function getName(){
+    public function getName(): string{
         return 'なし';
     }
 
-    public function getColor(){
+    public function getColor(): string{
         return 'なし';
     }
 
-    public function getHasLike(){
+    public function getHasLike(): string{
         return 'なし';
     }
 
-    public function getOrderOfPopularity(){
-        return 'なし';
+    public function getOrderOfPopularity(): int{
+        return 0;
     }
 
-    public function getCalorie(){
-        return 'なし';
+    public function getCalorie(): int{
+        return 0;
     }
 
 }
