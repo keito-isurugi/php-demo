@@ -1,1 +1,1 @@
-vendor/bin/phpunit test/$1Test.php
+vendor/bin/phpunit tests/$1Test.php

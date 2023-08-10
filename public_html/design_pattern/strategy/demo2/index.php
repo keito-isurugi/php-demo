@@ -1,16 +1,12 @@
-<?php
-require_once('./Fruits/Fruit.php');
-require_once('./Fruits/Orange.php');
-require_once('./Fruits/Apple.php');
-require_once('./Fruits/Grape.php');
-require_once('./Fruits/NoneFruit.php');
-use Fruits\Fruit;
+<?php	
+require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
+use PublicHtml\design_pattern\strategy\demo2\fruits\Fruit;
 
 $fruitClassMapping = [
-    'orange' => 'Fruits\Orange',
-    'apple' => 'Fruits\Apple',
-    'grape' => 'Fruits\Grape',
-    'none' => 'Fruits\NoneFruit',
+    'orange' => 'PublicHtml\design_pattern\strategy\demo2\fruits\Orange',
+    'apple' => 'PublicHtml\design_pattern\strategy\demo2\fruits\Apple',
+    'grape' => 'PublicHtml\design_pattern\strategy\demo2\fruits\Grape',
+    'none' => 'PublicHtml\design_pattern\strategy\demo2\fruits\NoneFruit',
 ];
 
 function getFruitNameByUrlPath(){

@@ -1,5 +1,5 @@
 <?php
-namespace Interfaces;
+namespace PublicHtml\design_pattern\strategy\demo2\interfaces;
 interface FruitInterface{
     public function getName(): string;
     public function getColor(): string;
