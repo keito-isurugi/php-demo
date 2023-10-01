@@ -9,7 +9,7 @@ function getDb() : PDO {
 }
 
 try {
-  print '接続に成功しました';
+  echo "接続に成功しました<br>";
 } catch (PDOException $e) {
   die("接続エラー： {$e->getMessage()} ");
 } finally {

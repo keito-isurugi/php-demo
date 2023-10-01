@@ -1,6 +1,6 @@
 <?php 
 	require_once '../db.php';
-	
+	phpinfo();
 	// 取得
 	$db = getDb();
 	$stmt = $db->prepare('SELECT * FROM users');
