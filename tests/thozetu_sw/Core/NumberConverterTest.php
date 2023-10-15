@@ -16,8 +16,8 @@ class NumberConverterTest extends TestCase
   {
     $fizzBuzz = new NumberConverter([
       $this->createMockRule(
-        expectedNumber: 1,
         expectedCarry: "",
+        expectedNumber: 1,
         matchResult: true,
         replacement: "Replaced"
       ),
@@ -29,14 +29,14 @@ class NumberConverterTest extends TestCase
   {
     $fizzBuzz = new NumberConverter([
       $this->createMockRule(
-        expectedNumber: 1,
         expectedCarry: "",
+        expectedNumber: 1,
         matchResult: true,
         replacement: "Fizz"
       ),
       $this->createMockRule(
-        expectedNumber: 1,
         expectedCarry: "Fizz",
+        expectedNumber: 1,
         matchResult: true,
         replacement: "FizzBuzz"
       ),
@@ -48,20 +48,20 @@ class NumberConverterTest extends TestCase
   {
     $fizzBuzz = new NumberConverter([
       $this->createMockRule(
-        expectedNumber: 1,
         expectedCarry: "",
+        expectedNumber: 1,
         matchResult: false,
         replacement: "Fizz"
       ),
       $this->createMockRule(
-        expectedNumber: 1,
         expectedCarry: "",
+        expectedNumber: 1,
         matchResult: false,
         replacement: "Buzz"
       ),
       $this->createMockRule(
-        expectedNumber: 1,
         expectedCarry: "",
+        expectedNumber: 1,
         matchResult: true,
         replacement: "1"
       ),
@@ -70,8 +70,8 @@ class NumberConverterTest extends TestCase
   }
 
   private function createMockRule(
-    int $expectedNumber,
     string $expectedCarry,
+    int $expectedNumber,
     bool $matchResult,
     string $replacement
   ): ReplaceRuleInterface {
