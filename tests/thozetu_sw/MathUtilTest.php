@@ -7,14 +7,23 @@ use  PublicHtml\tyozetu_sw\part6\MathUtil;
 class MathUtilTest extends TestCase {
   public function testSaturate(): void
   {
-    $mathUtil = new MathUtil();
+    $math = $this->createMock(Math::class);
+    $mathUtil = new MathUtil($math);
 
-    $this->assertEquals(2, $mathUtil->saturate(2, 1, 3));
+    // 少なくとも1回maxが引数2, 1で呼ばれて、2を返す
+    $math->expects($this->atLeastOnce())
+      ->method('max')
+      ->with($this->equalTo(2), $this->equalTo(1))
+      ->willReturn(2);
 
-    $this->assertEquals(1, $mathUtil->saturate(0, 1, 3));
-    $this->assertEquals(3, $mathUtil->saturate(4, 1, 3));
+    // 少なくとも1回minが引数2, 3で呼ばれて、2を返す
+    $math->expects($this->atLeastOnce())
+      ->method('min')
+      ->with($this->equalTo(2), $this->equalTo(3))
+      ->willReturn(2);
 
-    $this->assertEquals(1, $mathUtil->saturate(1, 1, 3));
-    $this->assertEquals(3, $mathUtil->saturate(3, 1, 3));
+    $result = $mathUtil->saturate(2, 1, 3);
+    $this->assertEquals(2, $result);
+
   }
 }

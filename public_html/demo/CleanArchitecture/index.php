@@ -13,7 +13,6 @@ $todos = $getListTodoUseCase->execute();
 
 ?>
 
-
 <div>
 	<?php foreach($todos as $todo) { ?>
 		<div>
